@@ -1,8 +1,9 @@
 from tornado.web import RequestHandler
-import subprocess
+from handlers import Env
 
 class IndexHandler(RequestHandler):
     def get(self):
         uri = self.request.uri
-        self.render("index.html", output=uri)
+        template = Env.get_template('index.j2')
+        self.write(template.render(output=uri))
 

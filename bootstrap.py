@@ -8,6 +8,7 @@ from route import route
 
 settings = {
     'static_path': join(dirname(__file__), 'static'),
+    'template_path': join(dirname(__file__), 'template')
 }
 
 if __name__ == '__main__':
