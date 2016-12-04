@@ -1,0 +1,6 @@
+---
+- host: '10.100.0.104'
+  engine: 'mysql'
+  db_name: 'tech_test'
+  db_user: 'db_manager'
+  db_pass: 'passw0rd'
