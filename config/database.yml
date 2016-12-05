@@ -1,5 +1,5 @@
 ---
-- host: 'localhost'
+- host: '10.100.0.l04'
   engine: 'mysql'
   db_name: 'tech_test'
   db_user: 'db_manager'
