@@ -14,7 +14,7 @@ if isfile(config_file):
 else:
     raise SystemExit(conn_info)
 db_conf = conn_info[0]
-engine = create_engine('%s://%s:%s@%s:%s/%s?charset=utf8' % (db_conf['engine'], db_conf['db_user'], db_conf['db_pass'], db_conf['host'], db_conf['port'], db_conf['db_name']))
+engine = create_engine('%s+mysqldb://%s:%s@%s/%s?charset=utf8' % (db_conf['engine'], db_conf['db_user'], db_conf['db_pass'], db_conf['host'], db_conf['db_name']))
 
 Base = declarative_base() 
 session = scoped_session(sessionmaker())
