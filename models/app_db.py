@@ -1,15 +1,18 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from models import Base
 
-class AppTable(Base):
-    __tablename__ = 'app_table'
+class AppData(Base):
+    __tablename__ = 'app_data'
     id = Column(Integer, primary_key=True, autoincrement=True)
     ip_address = Column(String, nullable=False)
-    api_url = Column(String, nullable=False)
-    call_time = Column(DateTime, nullable=False)
+    img_url = Column(String, nullable=False)
+    description = Column(String)
+    copyright = Column(String, nullable=False)
+    date = Column(DateTime, nullable=False)
 
-class AppTableManager(object):
-	@staticmethod
-	def add_records(ip, url, u_time, session):
-		#return session.query(AppTable).add(ip, url, u_time)
-		pass
+class AppDataManager(object):
+    @staticmethod
+    def add_records(ip, url, copyright, date, session, description=None):
+    #return session.query(AppTable).add(ip, url, u_time)
+        data = AppData(ip_address=ip, img_url=url, description=description, copyright=copyright, date=date)
+        return session.add(data)
