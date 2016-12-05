@@ -16,5 +16,3 @@ app_data = Table(
     Column('date', String(15), nullable=False)
 )
 metadata.create_all(engine)
-#session.create_all(AppData)
-
