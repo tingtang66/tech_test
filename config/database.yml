@@ -1,5 +1,5 @@
 ---
-- host: '10.100.0.l04'
+- host: '10\.100\.0\.l04'
   port: '3306'
   engine: 'mysql'
   db_name: 'tech_test'
