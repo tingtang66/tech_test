@@ -1,7 +1,7 @@
 import os
 from handlers.homepage import IndexHandler
 from handlers.nasa_daily import NasaDailyHandler
-from handlers.nasa_daily import NasaDailyImportHandler
+from handlers.nasa_daily import NasaDataImportHandler
 from tornado.web import StaticFileHandler
 route = []
 route.append((

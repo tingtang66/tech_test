@@ -7,13 +7,15 @@ from models.app_db import AppDataManager
 class NasaDailyHandler(RequestHandler):
     def get(self):
         with session_scope() as session:
-            data = AppDataManager.get_data(date, session)
+            all_date = AppDataManager.get_all_date(session)
         template = Env.get_template('nasa_daily.j2')
-        self.write(template.render())
+        self.write(template.render(date=all_date))
     def post(self):
-        pass
+        date = self.get_argument('date')
+        with session_scope() as session:
+            data = AppDataManager.get_record(date, session)
 
-class NasaDataImportHandler(RequestHandler)
+class NasaDataImportHandler(RequestHandler):
     def post(self):
     #get ip, returned data
         host_ip = os.environ['HOST_IP']
