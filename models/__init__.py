@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
 
-config_path = 'config'
+config_path = '/opt/application/config'
 config_file = '%s/database.yml' % config_path 
 
 if isfile(config_file):
