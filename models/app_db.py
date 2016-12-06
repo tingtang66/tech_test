@@ -13,7 +13,7 @@ class AppData(Base):
 
 class AppDataManager(object):
     @staticmethod
-    def add_records(ip, url, copyright, date, session, description=None):
+    def add_records(ip, url, date, session, copyright=None, description=None):
         data = AppData(ip_address=ip, img_url=url, description=description, copyright=copyright, date=date)
         session.add(data)
     @staticmethod

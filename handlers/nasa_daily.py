@@ -19,9 +19,13 @@ class NasaDataImportHandler(RequestHandler):
     def post(self):
     #get ip, returned data
         host_ip = os.environ['HOST_IP']
-        copyright = self.get_argument('copyright')
+        try: 
+            copyright = self.get_argument('copyright')
+        except:
+            copyright = 'Not mentioned'
+            pass
         date = self.get_argument('date')
         description = self.get_argument('explanation')
         img = self.get_argument('hdurl')
         with session_scope() as session:
-            AppDataManager.add_records(host_ip, img, copyright, date, session, description)
+            AppDataManager.add_records(host_ip, img, date, session, copyright, description)

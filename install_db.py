@@ -12,7 +12,7 @@ app_data = Table(
     Column('ip_address', String(15), nullable=False),
     Column('img_url', String(128), nullable=False),
     Column('description', Text),
-    Column('copyright', String(255), nullable=False),
+    Column('copyright', String(255), nullable=True),
     Column('date', String(15), nullable=False)
 )
 metadata.create_all(engine)
