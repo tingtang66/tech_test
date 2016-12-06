@@ -12,5 +12,5 @@ settings = {
 }
 
 if __name__ == '__main__':
-    Application(route, **settings).listen(sys.argv[1])
+    Application(route, debug=True, **settings).listen(sys.argv[1])
     IOLoop.instance().start()

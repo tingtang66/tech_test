@@ -1,14 +1,34 @@
 <html>
    <head>
-      <title>IP address</title>
-      <link href="static/css/boostrap.css" rel="stylesheet">
-      <link href="static/css/boostrap-theme.css rel="stylesheet">
+      <title>NASA Daily Photo</title>
+      <link href="static/css/bootstrap.css" rel="stylesheet">
+      <link href="static/css/bootstrap-theme.css rel="stylesheet">
    </head>
    <body>
-     <ul>
-         <li>{{ output }}</li>
-     </ul>
-     <button id="nasa">submit</button>
+       <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Tech Test</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/nasa">NASA Daily Picture index</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+      <div>
+        <p>Server *{{ output }}* requests today's picture</p>
+        <button id="nasa">Request</button>
+      </div>
+    </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
    <script src="static/js/bootstrap.js"></script>
